@@ -19,9 +19,8 @@ mongoose
 app.use(express.json());
 
 // Use routes
-app.use("/api", userRoutes);
-app.use("/api", authRoutes);
-
+app.use("/api", userRoutes);  
+app.use("/api/auth", authRoutes);  
 // Start server
 const PORT = 3000;
 app.listen(PORT, () => {
