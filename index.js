@@ -5,6 +5,7 @@ const app = express();
 // Import routes
 const userRoutes = require("./routes/userRoutes");
 const authRoutes = require("./routes/authRoutes");
+const customerRoutes = require("./routes/customerRoutes");
 
 // MongoDB connection string
 const dbURI =
