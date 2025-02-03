@@ -14,6 +14,7 @@ router.get("/customers", getCustomers);
 // GET customer by ID
 router.get("/customers/:id", getCustomerById);
 
+
 // POST to create a new customer
 router.post("/customers", createCustomer);
 
