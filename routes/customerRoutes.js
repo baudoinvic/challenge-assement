@@ -8,6 +8,8 @@ const {
   deleteCustomer,
 } = require("../controllers/customerController");
 
+
+
 // GET all customers
 router.get("/customers", getCustomers);
 
