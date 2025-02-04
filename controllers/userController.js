@@ -45,7 +45,7 @@ const updateUser = async (req, res) => {
 
     user.name = req.body.name;
     user.email = req.body.email;
-    user.password = req.body.password; // Remember to hash the password before saving
+    user.password = req.body.password; 
     const updatedUser = await user.save();
     res.json(updatedUser);
   } catch (err) {
