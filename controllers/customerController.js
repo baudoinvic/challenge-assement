@@ -59,17 +59,34 @@ const updateCustomer = async (req, res) => {
 };
 
 // Delete a customer
-const deleteCustomer = async (req, res) => {
-  try {
-    const customer = await Customer.findById(req.params.id);
-    if (!customer) return res.status(404).json({ message: "Customer not found" });
+// const deleteCustomer = async (req, res) => {
+//   try {
+//     const customer = await Customer.findById(req.params.id);
+//     if (!customer) return res.status(404).json({ message: "Customer not found" });
 
-    await customer.remove();
-    res.json({ message: "Customer deleted successfully" });
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-};
+//     await customer.remove();
+//     res.json({ message: "Customer deleted successfully" });
+//   } catch (err) {
+//     res.status(500).json({ message: err.message });
+//   }
+// };
+
+
+  const deleteCustomer = async (req, res) => {
+    try {
+      const customer = await Customer.findById(req.params.id);
+      if (!customer) {
+        return res.status(404).json({ message: "Customer not found" });
+      }
+
+      await Customer.findByIdAndDelete(req.params.id);
+
+      res.json({ message: "Customer deleted successfully" });
+    } catch (err) {
+      console.error("Error deleting user:", err);
+      res.status(500).json({ message: "Error deleting user: " + err.message });
+    }
+  };
 
 module.exports = {
   getCustomers,
