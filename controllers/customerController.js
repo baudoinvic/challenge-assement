@@ -83,8 +83,8 @@ const updateCustomer = async (req, res) => {
 
       res.json({ message: "Customer deleted successfully" });
     } catch (err) {
-      console.error("Error deleting user:", err);
-      res.status(500).json({ message: "Error deleting user: " + err.message });
+      console.error("Error deleting customer:", err);
+      res.status(500).json({ message: "Error deleting customer: " + err.message });
     }
   };
 
