@@ -8,6 +8,8 @@ const app = express();
 const userRoutes = require("./routes/userRoutes");
 const authRoutes = require("./routes/authRoutes");
 const customerRoutes = require("./routes/customerRoutes");
+const contactRoutes = require("./routes/contactRoutes");
+const subscriptionRoutes = require("./routes/subscriptionRoutes");
 
 // MongoDB connection string
 const dbURI =
@@ -31,6 +33,8 @@ app.use(cors());
 app.use("/api", customerRoutes);
 app.use("/api", userRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api", contactRoutes );
+app.use("/api", subscriptionRoutes);
 
 // Start server
 const PORT = 3000;
