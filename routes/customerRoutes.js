@@ -10,6 +10,7 @@ const {
 // GET all customers
 router.get("/customers", getCustomers);
 
+
 // GET customer by ID
 router.get("/customers/:id", getCustomerById);
 
