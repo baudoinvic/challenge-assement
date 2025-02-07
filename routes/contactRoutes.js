@@ -6,8 +6,8 @@ const Contact = require("../models/contactModel");
 // Send message (POST)
 router.post("/contact", async (req, res) => {
   try {
-    const { name, email, message } = req.body;
-    const newMessage = new Contact({ name, email, message });
+    const { firstname, lastname, email, message } = req.body;
+    const newMessage = new Contact({ firstname, lastname, email, message });
     await newMessage.save();
 
     res.status(201).json({ message: "Message sent successfully" });
