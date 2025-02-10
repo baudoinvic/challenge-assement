@@ -23,7 +23,7 @@ const getCustomerById = async (req, res) => {
 
 // Create a new customer
 const createCustomer = async (req, res) => {
-  
+
   const { name, email, phone, address } = req.body;
 
   const newCustomer = new Customer({
@@ -67,6 +67,7 @@ const updateCustomer = async (req, res) => {
         return res.status(404).json({ message: "Customer not found" });
       }
 
+      
       await Customer.findByIdAndDelete(req.params.id);
 
       res.json({ message: "Customer deleted successfully" });
