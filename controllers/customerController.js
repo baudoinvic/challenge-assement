@@ -66,8 +66,6 @@ const updateCustomer = async (req, res) => {
       if (!customer) {
         return res.status(404).json({ message: "Customer not found" });
       }
-
-      
       await Customer.findByIdAndDelete(req.params.id);
 
       res.json({ message: "Customer deleted successfully" });
