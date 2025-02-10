@@ -23,6 +23,7 @@ const getCustomerById = async (req, res) => {
 
 // Create a new customer
 const createCustomer = async (req, res) => {
+  
   const { name, email, phone, address } = req.body;
 
   const newCustomer = new Customer({
