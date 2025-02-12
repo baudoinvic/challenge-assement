@@ -75,6 +75,7 @@ const updateCustomer = async (req, res) => {
     }
   };
 
+  
 module.exports = {
   getCustomers,
   getCustomerById,
