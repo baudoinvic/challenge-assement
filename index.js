@@ -23,6 +23,7 @@ mongoose
 
 app.use(express.json());
 
+
 app.use(cors());
 
 // Use routes
