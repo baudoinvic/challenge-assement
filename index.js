@@ -1,7 +1,7 @@
 
 const express = require("express");
 const mongoose = require("mongoose");
-const cors = require("cors"); // Import the CORS module
+const cors = require("cors"); 
 const app = express();
 
 // Import routes
@@ -23,12 +23,11 @@ mongoose
 
 app.use(express.json());
 
-// Enable CORS for all origins (You can customize this for specific origins)
+
 app.use(cors());
 
 // Or if you want to limit it to specific origins, you can do:
 // app.use(cors({ origin: 'http://localhost:5173' }));
-
 // Use routes
 app.use("/api", customerRoutes);
 app.use("/api", userRoutes);
