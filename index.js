@@ -26,8 +26,6 @@ app.use(express.json());
 
 app.use(cors());
 
-// Or if you want to limit it to specific origins, you can do:
-// app.use(cors({ origin: 'http://localhost:5173' }));
 // Use routes
 app.use("/api", customerRoutes);
 app.use("/api", userRoutes);
