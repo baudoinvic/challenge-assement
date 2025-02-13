@@ -49,7 +49,7 @@
 
 const express = require("express");
 const router = express.Router();
-const nodemailer = require("nodemailer"); // Import Nodemailer
+const nodemailer = require("nodemailer"); 
 const Subscription = require("../models/subscriptionModel");
 
 // Create a transporter (for sending emails)
