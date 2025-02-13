@@ -47,17 +47,19 @@
 // module.exports = router;
 
 
+require("dotenv").config(); // Load environment variables
+
 const express = require("express");
 const router = express.Router();
-const nodemailer = require("nodemailer"); 
+const nodemailer = require("nodemailer");
 const Subscription = require("../models/subscriptionModel");
 
 // Create a transporter (for sending emails)
 const transporter = nodemailer.createTransport({
-  service: "gmail", 
+  service: "gmail",
   auth: {
-    user: "baudoinvicbolingo@gmail.com", 
-    pass: "pktm ydwn yplw dbcv", 
+    user: process.env.EMAIL_USER, // Use environment variable for email
+    pass: process.env.EMAIL_PASS, // Use environment variable for app password
   },
 });
 
@@ -77,7 +79,7 @@ router.post("/subscribe", async (req, res) => {
 
     // Send confirmation email
     const mailOptions = {
-      from: "baudoinvicbolingo@gmail.com", // Sender email
+      from: process.env.EMAIL_USER, // Sender email
       to: email, // Recipient email
       subject: "Thank You for Subscribing to Our Newsletter",
       text: `Dear ${email},\n\nThank you for subscribing to my newsletter.\n\nBest regards,\nBaudoin Lab`,
