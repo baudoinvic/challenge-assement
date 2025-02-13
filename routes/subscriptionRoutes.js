@@ -1,6 +1,4 @@
 
-
-
 require("dotenv").config(); 
 
 const express = require("express");
@@ -31,10 +29,10 @@ router.post("/subscribe", async (req, res) => {
     const newSubscription = new Subscription({ email });
     await newSubscription.save();
 
-    // Send confirmation email
+    
     const mailOptions = {
-      from: process.env.EMAIL_USER, // Sender email
-      to: email, // Recipient email
+      from: process.env.EMAIL_USER,
+      to: email,
       subject: "Thank You for Subscribing to Our Newsletter",
       text: `Dear ${email},\n\nThank you for subscribing to my newsletter.\n\nBest regards,\nBaudoin Lab`,
     };
