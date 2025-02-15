@@ -57,6 +57,7 @@ router.get("/subscriptions", async (req, res) => {
   }
 });
 
+
 // Unsubscribe (DELETE)
 router.delete("/unsubscribe/:email", async (req, res) => {
   try {
