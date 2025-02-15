@@ -28,7 +28,6 @@ router.post("/subscribe", async (req, res) => {
 
     const newSubscription = new Subscription({ email });
     await newSubscription.save();
-
     
     const mailOptions = {
       from: process.env.EMAIL_USER,
