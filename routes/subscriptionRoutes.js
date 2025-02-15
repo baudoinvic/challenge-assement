@@ -18,7 +18,6 @@ const transporter = nodemailer.createTransport({
 router.post("/subscribe", async (req, res) => {
   try {
     const { email } = req.body;
-
     // Check if email already exists
     const existingSubscription = await Subscription.findOne({ email });
     if (existingSubscription) {
