@@ -14,8 +14,6 @@ const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASS, 
   },
 });
-
-
 // Subscribe (POST)
 router.post("/subscribe", async (req, res) => {
   try {
