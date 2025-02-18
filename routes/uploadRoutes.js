@@ -11,7 +11,6 @@ if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir); 
 }
 
-
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, uploadDir); 
@@ -24,7 +23,6 @@ const storage = multer.diskStorage({
   },
 });
 
-// Initialize multer
 const upload = multer({ storage: storage });
 
 // API to upload a single file
