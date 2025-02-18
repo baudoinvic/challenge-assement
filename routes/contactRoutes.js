@@ -19,16 +19,14 @@ router.post("/contact", async (req, res) => {
   try {
     const { firstname, lastname, email, message } = req.body;
 
-    // Save the message to the database
     const newMessage = new Contact({ firstname, lastname, email, message });
     await newMessage.save();
 
-    // Email content (sent to the user who submitted the form)
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: email, // Send email to the user
+      to: email, 
       subject: "Thank you for contacting us!",
-      text: `Hello ${firstname},\n\nThank you for reaching out. We have received your message:\n\n"${message}"\n\nWe'll get back to you soon.\n\nBest regards,\nYour Company`,
+      text: `Hello ${firstname},\n\nThank you for reaching out. We have received your message:\n\n"${message}"\n\nWe'll get back to you soon.\n\nBest regards,\nBaudoin Labs`,
     };
 
     // Send email
