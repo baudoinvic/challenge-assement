@@ -17,9 +17,9 @@ const transporter = nodemailer.createTransport({
 // Send message (POST)
 router.post("/contact", async (req, res) => {
   try {
-    const { firstname, lastname, email, message } = req.body;
+    const { firstname, lastname, email, address, message } = req.body;
 
-    const newMessage = new Contact({ firstname, lastname, email, message });
+    const newMessage = new Contact({ firstname, lastname, email, address, message });
     await newMessage.save();
 
     const mailOptions = {
